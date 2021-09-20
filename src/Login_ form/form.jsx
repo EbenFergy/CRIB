@@ -11,7 +11,7 @@ const Form = () =>{
     return(
         <div className="form-cont">
             <div className="left">
-                <h1>Welcome to the Crib!</h1>
+                <h1>CriB!</h1>
                 <h4>Sign in to see all we have to offer.</h4>
             </div>
             
