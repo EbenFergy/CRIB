@@ -13,6 +13,11 @@ const FormStyle = styled.div`
 
   /* border: 10px solid black; */
 
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-basis: 60%;
+  }
+
   .logo {
     position: absolute;
     top: 10rem;
@@ -22,6 +27,12 @@ const FormStyle = styled.div`
 
   .logo:hover {
     transform: rotate(-360deg) scale(3);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .logo{
+      display:none
+    }
   }
 
   .write-up {

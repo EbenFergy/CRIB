@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Cards = styled.div`
+ const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +12,4 @@ export const Cards = styled.div`
   background-color: white;
 `;
 
-export const CardsHeader = styled.div`
-  background: green;
-  /* justify-self: flex-start; */
-  margin-bottom: 2rem;
-`;
+export default Cards;

@@ -7,6 +7,10 @@ const AppStyle = styled.div`
   height: 100vh;
   display: flex;
 
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
   img {
     /* opacity: 0.2; */
     transition: width 1s;

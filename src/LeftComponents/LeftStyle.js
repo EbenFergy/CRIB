@@ -7,14 +7,19 @@ const LeftStyle = styled.div`
     rgba(63, 34, 101, 1) 0%,
     rgba(139, 47, 202, 1) 100%
   );
-  height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255);
+  width: 40%;
   /* border: 2px solid; */
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-basis: 40%;
+  }
 
   h1 {
     font-family: "Audiowide", sans-serif;
@@ -24,6 +29,10 @@ const LeftStyle = styled.div`
   h4 {
     font-weight: 100;
     margin: 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* display: none; */
   }
 `;
 

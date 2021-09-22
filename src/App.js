@@ -7,7 +7,7 @@ function App() {
   return (
     <AppStyle>
       <img src={companyLogo} alt="logo" className="bigLogo" />
-      <LeftStyle style={{ width: "40%" }} className="border">
+      <LeftStyle className="border">
         <img src={companyLogo} alt="logo" className="smallLogo" />
         <h1>CriB!</h1>
         <h4>Hover any of the icons for some action.</h4>
