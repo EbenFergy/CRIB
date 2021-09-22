@@ -6,11 +6,11 @@ import companyLogo from "./icons/logo.svg";
 function App() {
   return (
     <AppStyle>
+      <img src={companyLogo} alt="logo" className="bigLogo" />
       <LeftStyle style={{ width: "40%" }} className="border">
-        <img src={companyLogo} alt="logo" className="bigLogo" />
-        <img src={companyLogo} alt="logo" />
+        <img src={companyLogo} alt="logo" className="smallLogo" />
         <h1>CriB!</h1>
-        <h4>Sign in to see all we have to offer.</h4>
+        <h4>Hover any of the icons for some action.</h4>
       </LeftStyle>
       <Form className="border" />
     </AppStyle>

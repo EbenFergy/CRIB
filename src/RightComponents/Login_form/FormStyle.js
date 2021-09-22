@@ -9,13 +9,19 @@ const FormStyle = styled.div`
   /* height: 100%; */
   width: 60%;
   background-color: #212121;
+  overflow: hidden;
 
   /* border: 10px solid black; */
 
-  img {
+  .logo {
     position: absolute;
     top: 10rem;
+    transition: ease-in-out 1s;
     /* margin-bottom: 5rem; */
+  }
+
+  .logo:hover {
+    transform: rotate(-360deg) scale(3);
   }
 
   .write-up {
@@ -57,6 +63,34 @@ const FormStyle = styled.div`
     outline: none;
     color: #ffff;
     /* border: 10px solid black; */
+  }
+
+  .formBigLogo {
+    position: absolute;
+    bottom: -5rem;
+    transform: rotate(-90deg) scale(0.2);
+    width: 10rem;
+    opacity: 0.1;
+    animation-name: move;
+    animation-duration: 10s;
+    /* animation-fill-mode: both; */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(0.2);
+    }
+    25% {
+      transform: translate(200px, -200px) rotate(-180deg) scale(0.5);
+    }
+    50% {
+      transform: translate(0, 0) rotate(0deg) scale(0.2);
+    }
+    100% {
+      transform: translate(-200px, -200px) rotate(180deg) scale(0.5);
+    }
   }
 `;
 export default FormStyle;

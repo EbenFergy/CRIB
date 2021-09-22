@@ -15,7 +15,6 @@ const LeftStyle = styled.div`
   justify-content: center;
   color: rgba(255, 255, 255);
   /* border: 2px solid; */
-  
 
   h1 {
     font-family: "Audiowide", sans-serif;
@@ -23,7 +22,7 @@ const LeftStyle = styled.div`
   }
 
   h4 {
-    font-weight: 400;
+    font-weight: 100;
     margin: 0;
   }
 `;

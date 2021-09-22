@@ -6,7 +6,8 @@ import companyLogo from "../../icons/logo.svg";
 const Form = () => {
   return (
     <FormStyle>
-      <img src={companyLogo} alt="logo" />
+      <img src={companyLogo} alt="logo" className="formBigLogo" />
+      <img src={companyLogo} alt="logo" className='logo'/>
       <div className="wrapper">
         <div className="write-up">
           Login to your <br /> Dashboard

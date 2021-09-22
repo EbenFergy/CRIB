@@ -18,6 +18,19 @@ const AppStyle = styled.div`
     top: -5rem;
     width: 10rem;
     opacity: 0.1;
+    transition: all 1s ease-in;
+  }
+
+  .bigLogo:hover {
+    transform: translate(200px, 100px) rotate(160deg) scale(0.5);
+  }
+
+  .smallLogo {
+    transition: all ease-in 1s;
+  }
+
+  .smallLogo:hover {
+    transform: rotate(360deg);
   }
 `;
 
