@@ -14,7 +14,13 @@ const LeftStyle = styled.div`
   justify-content: center;
   color: rgba(255, 255, 255);
   width: 40%;
+  border-radius: 0 80px 80px 0;
+  transition: border-radius 1s ease-in-out;
   /* border: 2px solid; */
+
+  &:hover {
+    border-radius: 0;
+  }
 
   @media only screen and (max-width: 768px) {
     width: 100%;

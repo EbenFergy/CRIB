@@ -24,7 +24,7 @@ export const DarkOpacity = styled.div`
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 10;
   /* border: 5px solid; */
 `;

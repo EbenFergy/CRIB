@@ -6,6 +6,7 @@ const AppStyle = styled.div`
   /* width: 100vw; */
   height: 100vh;
   display: flex;
+  background-color: #212121;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;

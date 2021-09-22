@@ -55,14 +55,7 @@ const FormStyle = styled.div`
     /* border: 10px solid black; */
   }
 
-  Button {
-    /* width: 50%; */
-  }
-  /* 
-  form div {
-    width: fit-content;
-    border: 10px solid black;
-  } */
+ 
 
   form input {
     width: 15rem;
@@ -75,6 +68,7 @@ const FormStyle = styled.div`
     color: #ffff;
     /* border: 10px solid black; */
   }
+
 
   .formBigLogo {
     position: absolute;
