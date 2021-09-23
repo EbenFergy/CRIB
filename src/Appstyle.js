@@ -4,9 +4,10 @@ const AppStyle = styled.div`
   margin: 0;
   padding: 0;
   /* width: 100vw; */
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   background-color: #212121;
+  border: 1px solid red;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
