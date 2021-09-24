@@ -14,8 +14,8 @@ const Button = styled.button`
   width: auto;
   color: #ffff;
   cursor: pointer;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   transition: background 2s;
 
   &:hover {

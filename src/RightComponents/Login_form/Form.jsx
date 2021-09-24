@@ -30,11 +30,12 @@ const BackDrop = ({ errorModal, closeModal, passwordError }) => {
   ) : null;
 };
 
-const Form = () => {
+const Form = ({loggedInStatus}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorModal, setErrorModal] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  
 
   const usernameHandler = (e) => {
     setUsername(e.target.value.trim());
@@ -56,10 +57,7 @@ const Form = () => {
     username.length === 0 || password.length === 0
       ? setErrorModal(true)
       : password.length >= 7
-      ? (userProfile = {
-          username,
-          password,
-        })
+      ? loggedInStatus(true)
       : setPasswordError(true);
 
     console.log(typeof userProfile);

@@ -16,7 +16,7 @@ const LeftStyle = styled.div`
   width: 40%;
   border-radius: 0 80px 80px 0;
   transition: border-radius 1s ease-in-out;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* border: 2px solid; */
 
   &:hover {
@@ -26,6 +26,7 @@ const LeftStyle = styled.div`
   @media only screen and (max-width: 768px) {
     width: 100%;
     flex-basis: 40%;
+    border-radius: 0 0 80px 0;
   }
 
   h1 {

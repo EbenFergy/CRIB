@@ -6,12 +6,12 @@ const FormStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100%; */
+
   width: 60%;
   background-color: #212121;
   overflow: hidden;
 
-  /* border: 10px solid black; */
+  /* border: 10px solid green; */
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -30,8 +30,8 @@ const FormStyle = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    .logo{
-      display:none
+    .logo {
+      display: none;
     }
   }
 
@@ -55,20 +55,25 @@ const FormStyle = styled.div`
     /* border: 10px solid black; */
   }
 
- 
-
   form input {
     width: 15rem;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background: none;
+    padding: 4px 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    background-color: gray;
     appearance: none;
     outline: none;
     color: #ffff;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 5px;
     /* border: 10px solid black; */
   }
 
+  form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+  }
 
   .formBigLogo {
     position: absolute;
