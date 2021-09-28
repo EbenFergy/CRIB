@@ -15,7 +15,7 @@ export const LeftDash = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 4rem;
   align-items: flex-start;
   justify-content: space-around;
   padding: 2rem 0;
@@ -45,7 +45,21 @@ export const LeftDash = styled.div`
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    /* border: 2px solid yellow; */
+    width: 100%;
+  }
+
+  .div {
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
+    margin: 0;
+  }
+
+  hr {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 0;
+    margin: 0;
   }
 `;
 
@@ -57,26 +71,92 @@ export const RightDash = styled.div`
 
   display: flex;
   flex-direction: column;
+  color: #ffff;
+  padding: 0 1rem;
 
   .first {
     flex-basis: 10%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 3rem;
   }
-  .second {
-    flex-basis: 30%;
-    border: 2px solid red;
+
+  .first p,
+  .first h3 {
+    margin: 0;
   }
 
-  .snapshots *{
-    border: 2px solid red;
+  input {
+    width: 15rem;
+    padding: 8px 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    background-color: gray;
+    appearance: none;
+    outline: none;
+    color: #ffff;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 10px;
+    border: none;
+    /* border: 10px solid black; */
+  }
+
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .second {
+    flex-basis: 30%;
+    /* border: 2px solid red; */
+    display: flex;
+  }
+
+  .snapshots {
+    width: 50%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .snapshots * {
+    /* border: 2px solid red; */
+    width: 8rem;
+    background-color: #252526;
+  }
+
+  .CribInformation {
+    /* border: 2px solid green; */
+    width: 50%;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+  }
+
+  .CribInformation * {
+    width: 100%;
+    background-color: #252526;
   }
 
   .third {
     flex-basis: 60%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .third * {
+    width: 15rem;
+    background-color: #252526;
+    margin: 0;
   }
 `;

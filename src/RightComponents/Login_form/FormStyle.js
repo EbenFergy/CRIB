@@ -8,7 +8,7 @@ const FormStyle = styled.div`
   justify-content: center;
 
   width: 60%;
-  background-color: #212121;
+  background-color: #1a1a1a;
   overflow: hidden;
 
   /* border: 10px solid green; */

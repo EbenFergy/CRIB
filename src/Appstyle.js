@@ -6,7 +6,7 @@ const AppStyle = styled.div`
   /* width: 100vw; */
   height: 100vh;
   display: flex;
-  background-color: #212121;
+  background-color: #1a1a1a;
   overflow: hidden;
   /* border: 1px solid red; */
 

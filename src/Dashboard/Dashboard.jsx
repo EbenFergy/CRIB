@@ -1,5 +1,6 @@
 import React from "react";
 import { DashboardStyle, LeftDash, RightDash } from "./DashboardStyle";
+import Cards from "../UI/Cards/Cards";
 
 // import RightDash
 
@@ -10,11 +11,12 @@ const Dashboard = () => {
         <h1>CriB!</h1>
         <div className="leftDashMenu">
           <div className="div">Dashboard</div>
-          <div className="div">Houses</div>
-          <div className="div">Payment Details</div>
-          <div className="div">Learning Center</div>
-          <div className="div">FAQs</div>
-          <div className="div">Settings</div>
+          <hr />
+          <div className="div">Houses</div> <hr />
+          <div className="div">Payment Details</div> <hr />
+          <div className="div">Learning Center</div> <hr />
+          <div className="div">FAQs</div> <hr />
+          <div className="div">Settings</div> <hr />
         </div>
         <div className="logout">Logout</div>
       </LeftDash>
@@ -28,15 +30,21 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="second">
-          <div className='snapshots'>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <div className="snapshots">
+            <Cards></Cards>
+            <Cards></Cards>
+            <Cards></Cards>
+            <Cards></Cards>
           </div>
-          <div></div>
+          <div className="CribInformation">
+            <Cards></Cards>
+          </div>
         </div>
-        <div className="third"></div>
+        <div className="third">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
       </RightDash>
     </DashboardStyle>
   );
