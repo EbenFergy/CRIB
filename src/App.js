@@ -14,14 +14,14 @@ function App() {
   };
 
   const bringUsername = (username) => {
-    <Dashboard username={enteredUsername} />;
-    return setEnteredUsername(username);
+    setEnteredUsername(username);
+    console.log(username);
   };
 
   return (
     <>
       {isLoggedIn ? (
-        <Dashboard loggedInStatus={loggedInStatus} />
+        <Dashboard loggedInStatus={loggedInStatus} username={enteredUsername} />
       ) : (
         <>
           <AppStyle>

@@ -70,6 +70,10 @@ export const LeftDash = styled.div`
     margin: 0;
     /* border: 2px solid green; */
   }
+
+  Button {
+    font-size: 1rem;
+  }
 `;
 
 export const RightDash = styled.div`
@@ -90,6 +94,11 @@ export const RightDash = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 3rem;
+  }
+
+  .first span {
+    color: rgba(139, 47, 202, 1);
+    font-size: 1.5rem;
   }
 
   .first p,

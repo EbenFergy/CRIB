@@ -30,7 +30,10 @@ const Dashboard = ({ loggedInStatus, username }) => {
       <RightDash>
         <div className="first">
           <div>
-            <p>Hi {username}</p> <h3>Welcome to the CRiB</h3>
+            <p>
+              Hi <span>{`  ${username},`}</span>{" "}
+            </p>{" "}
+            <h3>Welcome to the CRiB</h3>
           </div>
           <div>
             <input type="search" placeholder="search" />

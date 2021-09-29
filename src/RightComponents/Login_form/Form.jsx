@@ -59,8 +59,8 @@ const Form = ({ loggedInStatus, bringUsername }) => {
     username.length === 0 || password.length === 0
       ? setErrorModal(true)
       : password.length >= 7
-      ? loggedInStatus(true) &&
-        bringUsername(username)
+      ? bringUsername(username) || loggedInStatus(true)
+        
       : setPasswordError(true);
   };
 
@@ -75,8 +75,8 @@ const Form = ({ loggedInStatus, bringUsername }) => {
         <form onSubmit={onSubmitHandler}>
           <div>
             <input
-              type="name"
-              placeholder="email"
+              type="text"
+              placeholder="username"
               // required
               onChange={usernameHandler}
             />
