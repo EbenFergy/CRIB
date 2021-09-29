@@ -30,16 +30,17 @@ const BackDrop = ({ errorModal, closeModal, passwordError }) => {
   ) : null;
 };
 
-const Form = ({loggedInStatus}) => {
+const Form = ({ loggedInStatus, bringUsername }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorModal, setErrorModal] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  
 
   const usernameHandler = (e) => {
     setUsername(e.target.value.trim());
+
   };
+
 
   const passwordHandler = (e) => {
     setPassword(e.target.value.trim());
@@ -49,18 +50,18 @@ const Form = ({loggedInStatus}) => {
     setErrorModal(false);
     setPasswordError(false);
   };
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    let userProfile;
+    // let userProfile;
 
     username.length === 0 || password.length === 0
       ? setErrorModal(true)
       : password.length >= 7
-      ? loggedInStatus(true)
+      ? loggedInStatus(true) &&
+        bringUsername(username)
       : setPasswordError(true);
-
-    console.log(typeof userProfile);
   };
 
   return (
@@ -74,7 +75,7 @@ const Form = ({loggedInStatus}) => {
         <form onSubmit={onSubmitHandler}>
           <div>
             <input
-              type="email"
+              type="name"
               placeholder="email"
               // required
               onChange={usernameHandler}

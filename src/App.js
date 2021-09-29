@@ -7,15 +7,21 @@ import Dashboard from "./Dashboard/Dashboard";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [enteredUsername, setEnteredUsername] = useState("");
 
   const loggedInStatus = (bool) => {
-    return bool ? setIsLoggedIn(true) : null;
+    return bool ? setIsLoggedIn(true) : setIsLoggedIn(false);
+  };
+
+  const bringUsername = (username) => {
+    <Dashboard username={enteredUsername} />;
+    return setEnteredUsername(username);
   };
 
   return (
     <>
       {isLoggedIn ? (
-        <Dashboard />
+        <Dashboard loggedInStatus={loggedInStatus} />
       ) : (
         <>
           <AppStyle>
@@ -25,7 +31,11 @@ function App() {
               <h1>CriB!</h1>
               <h4>Hover any of the icons for some action.</h4>
             </LeftStyle>
-            <Form className="border" loggedInStatus={loggedInStatus} />
+            <Form
+              className="border"
+              loggedInStatus={loggedInStatus}
+              bringUsername={bringUsername}
+            />
           </AppStyle>
         </>
       )}

@@ -1,10 +1,15 @@
 import React from "react";
 import { DashboardStyle, LeftDash, RightDash } from "./DashboardStyle";
 import Cards from "../UI/Cards/Cards";
-
+import Button from "../UI/Button/Button";
 // import RightDash
 
-const Dashboard = () => {
+const Dashboard = ({ loggedInStatus, username }) => {
+  const logOutHandler = () => {
+    return loggedInStatus(false);
+  };
+
+  console.log(username);
   return (
     <DashboardStyle>
       <LeftDash>
@@ -18,12 +23,14 @@ const Dashboard = () => {
           <div className="div">FAQs</div> <hr />
           <div className="div">Settings</div> <hr />
         </div>
-        <div className="logout">Logout</div>
+        <Button type="button" className="logout" onClick={logOutHandler}>
+          Logout
+        </Button>
       </LeftDash>
       <RightDash>
         <div className="first">
           <div>
-            <p>Hi Charles</p> <h3>Welcome to the CRiB</h3>
+            <p>Hi {username}</p> <h3>Welcome to the CRiB</h3>
           </div>
           <div>
             <input type="search" placeholder="search" />

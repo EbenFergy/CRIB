@@ -45,14 +45,22 @@ export const LeftDash = styled.div`
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.2rem;
     /* border: 2px solid yellow; */
     width: 100%;
   }
 
   .div {
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
+    /* border: 2px solid green; */
+    padding: 1rem 1rem;
     margin: 0;
+    cursor: pointer;
+  }
+
+  .div:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 10px solid rgba(139, 47, 202, 1);
   }
 
   hr {
@@ -60,6 +68,7 @@ export const LeftDash = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 0;
     margin: 0;
+    /* border: 2px solid green; */
   }
 `;
 
