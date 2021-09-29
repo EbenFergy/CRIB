@@ -38,9 +38,7 @@ const Form = ({ loggedInStatus, bringUsername }) => {
 
   const usernameHandler = (e) => {
     setUsername(e.target.value.trim());
-
   };
-
 
   const passwordHandler = (e) => {
     setPassword(e.target.value.trim());
@@ -59,8 +57,8 @@ const Form = ({ loggedInStatus, bringUsername }) => {
     username.length === 0 || password.length === 0
       ? setErrorModal(true)
       : password.length >= 7
-      ? bringUsername(username) || loggedInStatus(true)
-        
+      ? bringUsername(username) ||
+        loggedInStatus(true) 
       : setPasswordError(true);
   };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppStyle from "./Appstyle";
 import LeftStyle from "./LeftComponents/LeftStyle.js";
 import Form from "./RightComponents/Login_form/Form";
@@ -10,8 +10,16 @@ function App() {
   const [enteredUsername, setEnteredUsername] = useState("");
 
   const loggedInStatus = (bool) => {
-    return bool ? setIsLoggedIn(true) : setIsLoggedIn(false);
+    return bool
+      ? setIsLoggedIn(true) || localStorage.setItem("loggedIn", "1")
+      : setIsLoggedIn(false);
   };
+
+  useEffect(() => {
+    return localStorage.getItem("loggedIn") === "1"
+      ? setIsLoggedIn(true)
+      : setIsLoggedIn(false);
+  }, []);
 
   const bringUsername = (username) => {
     setEnteredUsername(username);
