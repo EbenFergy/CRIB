@@ -6,7 +6,8 @@ import Button from "../UI/Button/Button";
 
 const Dashboard = ({ loggedInStatus, username }) => {
   const logOutHandler = () => {
-    return loggedInStatus(false);
+    localStorage.removeItem("loggedIn");
+    loggedInStatus(false);
   };
 
   console.log(username);
