@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useReducer } from "react";
 import FormStyle from "./FormStyle";
 import Button from "../../UI/Button/Button";
 import companyLogo from "../../icons/logo.svg";
@@ -30,23 +30,67 @@ const BackDrop = ({ errorModal, closeModal, passwordError }) => {
   ) : null;
 };
 
+const initialState = {
+  username: "",
+  password: "",
+  errorModal: false,
+  passwordError: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_INPUT":
+      return {
+        ...state,
+        [action.key]: action.value,
+      };
+
+    case "ERRORS":
+      return {
+        ...state,
+        [action.key1]: action.value,
+        [action.key2]: action.value,
+      };
+    default:
+      return state;
+  }
+};
+
 const Form = ({ loggedInStatus, bringUsername }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorModal, setErrorModal] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [errorModal, setErrorModal] = useState(false);
+  // const [passwordError, setPasswordError] = useState(false);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const usernameHandler = (e) => {
-    setUsername(e.target.value.trim());
+    dispatch({
+      type: "UPDATE_INPUT",
+      value: e.target.value.trim(),
+      key: "username",
+    });
   };
 
+  // console.log(username);
+
   const passwordHandler = (e) => {
-    setPassword(e.target.value.trim());
+    dispatch({
+      type: "UPDATE_INPUT",
+      value: e.target.value.trim(),
+      key: "password",
+    });
   };
 
   const closeModal = () => {
-    setErrorModal(false);
-    setPasswordError(false);
+    dispatch({
+      type: "ERRORS",
+      value: false,
+      key1: "errorModal",
+      key2: "passwordError"
+    });
+    // setErrorModal(false);
+    // setPasswordError(false);
   };
 
   const onSubmitHandler = (e) => {
@@ -54,12 +98,11 @@ const Form = ({ loggedInStatus, bringUsername }) => {
 
     // let userProfile;
 
-    username.length === 0 || password.length === 0
-      ? setErrorModal(true)
-      : password.length >= 7
-      ? bringUsername(username) ||
-        loggedInStatus(true) 
-      : setPasswordError(true);
+    state.username.length === 0 || state.password.length === 0
+      ? dispatch({type:'ERRORS', value:true, key1:'errorModal'  }) 
+      : state.password.length >= 7
+      ? bringUsername(state.username) || loggedInStatus(true)
+      : dispatch({type:'ERRORS', value:true, key2:'passwordError'  });
   };
 
   return (
@@ -93,17 +136,17 @@ const Form = ({ loggedInStatus, bringUsername }) => {
 
       {ReactDOM.createPortal(
         <Modal
-          errorModal={errorModal}
+          errorModal={state.errorModal}
           closeModal={closeModal}
-          passwordError={passwordError}
+          passwordError={state.passwordError}
         />,
         document.getElementById("modal")
       )}
       {ReactDOM.createPortal(
         <BackDrop
-          errorModal={errorModal}
+          errorModal={state.errorModal}
           closeModal={closeModal}
-          passwordError={passwordError}
+          passwordError={state.passwordError}
         />,
         document.getElementById("backDrop")
       )}
