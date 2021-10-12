@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { DashboardStyle, LeftDash, RightDash } from "./DashboardStyle";
 import Cards from "../UI/Cards/Cards";
 import Button from "../UI/Button/Button";
+import authContext from "../store/authContext";
 // import RightDash
 
-const Dashboard = ({ loggedInStatus, username }) => {
+const Dashboard = ({ loggedInStatus}) => {
   const logOutHandler = () => {
     localStorage.removeItem("loggedIn");
     loggedInStatus(false);
   };
 
-  console.log(username);
+  const ctx = useContext(authContext);
+  
+  // console.log(username);
   return (
     <DashboardStyle>
       <LeftDash>
@@ -32,7 +35,7 @@ const Dashboard = ({ loggedInStatus, username }) => {
         <div className="first">
           <div>
             <p>
-              Hi <span>{`  ${username},`}</span>{" "}
+              Hi <span>{`  ${ctx.enteredUsername},`}</span>{" "}
             </p>{" "}
             <h3>Welcome to the CRiB</h3>
           </div>

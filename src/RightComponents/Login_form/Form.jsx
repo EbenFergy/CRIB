@@ -50,7 +50,7 @@ const reducer = (state, action) => {
         ...state,
         [action.key1]: action.value,
         [action.key2]: action.value,
-      };
+      };  
     default:
       return state;
   }
