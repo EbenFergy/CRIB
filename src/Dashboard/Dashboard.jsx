@@ -5,14 +5,15 @@ import Button from "../UI/Button/Button";
 import authContext from "../store/authContext";
 // import RightDash
 
-const Dashboard = ({ loggedInStatus}) => {
+const Dashboard = ({ loggedInStatus }) => {
   const logOutHandler = () => {
     localStorage.removeItem("loggedIn");
+    localStorage.removeItem("username");
     loggedInStatus(false);
   };
 
   const ctx = useContext(authContext);
-  
+
   // console.log(username);
   return (
     <DashboardStyle>

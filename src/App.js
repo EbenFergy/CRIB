@@ -23,9 +23,12 @@ const App = () => {
   }, []);
 
   const bringUsername = (username) => {
-    setEnteredUsername(username);
-    console.log(username);
+    localStorage.setItem('username', username)
+    setEnteredUsername(localStorage.getItem('username'));
+    
   };
+
+  console.log(enteredUsername);
 
   return (
     <authContext.Provider value={{ enteredUsername: enteredUsername }}>
